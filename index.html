@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Lists</h1>
+    </header>
+    <main>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Enter new task...">
+            <button id="addButton">Add</button>
+            <button id="resetButton">Reset</button>
+        </div>
+        <div id="taskContainer" class="task-container">
+            <!-- Tasks will be added here -->
+        </div>
+        <button id="deleteAllButton">Delete All</button>
+    </main>
+    <div id="confirmationPopup" class="popup">
+        <p id="popupMessage"></p>
+        <button id="confirmButton">Yes</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
