@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
+    // Render tasks in the task container
     function renderTasks() {
         taskContainer.innerHTML = '';
         tasks.forEach((task, index) => {
@@ -37,17 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            const doneButton = taskItem.querySelector('.done-button');
-            const deleteButton = taskItem.querySelector('.delete-button');
-
-            doneButton.addEventListener('click', () => {
+            taskItem.querySelector('.done-button').addEventListener('click', () => {
                 task.done = !task.done;
-                task.timestamp = task.done ? new Date().toLocaleTimeString() : null;
                 saveTasks();
                 renderTasks();
             });
 
-            deleteButton.addEventListener('click', () => {
+            taskItem.querySelector('.delete-button').addEventListener('click', () => {
                 showPopup('Are you sure you want to delete this task?', () => {
                     tasks.splice(index, 1);
                     saveTasks();
@@ -59,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Show confirmation popup
     function showPopup(message, onConfirm) {
         popupMessage.textContent = message;
         confirmationPopup.style.display = 'block';
@@ -71,20 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    // Add a new task
     addButton.addEventListener('click', () => {
         const taskText = taskInput.value.trim();
         if (taskText) {
-            tasks.push({ text: taskText, done: false, timestamp: null });
+            tasks.push({ text: taskText, done: false });
             taskInput.value = '';
             saveTasks();
             renderTasks();
         }
     });
 
+    // Reset task input field
     resetButton.addEventListener('click', () => {
         taskInput.value = '';
     });
 
+    // Delete all tasks
     deleteAllButton.addEventListener('click', () => {
         showPopup('Are you sure you want to delete all tasks?', () => {
             tasks = [];
