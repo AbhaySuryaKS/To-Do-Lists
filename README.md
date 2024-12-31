@@ -77,4 +77,4 @@ A simple and interactive To-Do List web application where users can add, mark, d
 ## License
 
 This project is open-source and free to use.
-https://codepen.io/codemaster2301/pen/mdZRJxR
+https://codepen.io/AbhaySuryaKS/pen/mdZRJxR
