@@ -74,7 +74,7 @@ A simple and interactive To-Do List web application where users can add, mark, d
 - Add deadlines or reminders for tasks.
 - Add an option to mark all tasks as done.
 
-## 💡 Credits
+## Credits
 
 Made by [Abhay Surya K S](https://github.com/AbhaySuryaKS/) 
 
